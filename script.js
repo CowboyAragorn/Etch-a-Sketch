@@ -1,13 +1,12 @@
-let squareCount = 16;
-
+let squareCount = 5;
+let squareCountSquared = squareCount * squareCount
 
 
 
 
 function createSquares (){
+    console.log(squareCount);
     for (let i = 1; i <= squareCount; i++){
-        console.log("i = " + i);
-        console.log("SC = " +squareCount);
         let squareColumn = document.createElement("div");
             let attCol = document.createAttribute("class");
                 attCol.value = "squaresCol"
@@ -28,15 +27,64 @@ function createSquares (){
 
 
 
+function paint(){
+    let elements = document.getElementsByClassName("squaresRow");
+
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].addEventListener("mouseover", function () { 
+            elements[i].style.backgroundColor = "red";
+        
+        });
+    }
+
+}
+
+let resetBtn = document.querySelector("#resetBtn")
+      resetBtn.addEventListener('click', cleanSlate);
+    resetBtn.addEventListener('click', deSquare);
+     resetBtn.addEventListener('click', deSquare);
+    resetBtn.addEventListener('click', reSquare);
+    resetBtn.addEventListener('click', createSquares);
+    resetBtn.addEventListener('click', paint);
+
+
+function cleanSlate() {
+    
+    let elements = document.getElementsByClassName("squaresRow");
+
+    for (let i = 0; i < elements.length; i++) {
+            elements[i].style.backgroundColor = "white";
+        }
+    }
+
+function deSquare(){
+    let elements = document.querySelectorAll(".squaresRow");
+    let elements2 = document.querySelectorAll(".squaresCol");
+
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].remove();
+    
+    }
+
+    for (let i = 0; i < elements2.length; i++) {
+        elements2[i].remove();
+
+    }
+
+}
+
+function reSquare(){
+   return squareCount = prompt("How Many Squares for your Etch-a-Sketch")
+    };
+
+
+
 
 createSquares();
+paint();
 
 
-let elements = document.getElementsByClassName("squaresRow");
 
-for (let i = 0; i < elements.length; i++) {
-    elements[i].addEventListener("mouseover", function () { 
-        elements[i].style.backgroundColor = "red";
-    
-    });
-}
+   
+
+
