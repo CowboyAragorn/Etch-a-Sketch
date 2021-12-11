@@ -1,0 +1,22 @@
+#squareContainerColumn{
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+justify-content: center;
+align-content: center;
+
+}
+
+.squaresCol{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+
+}
+
+ .squaresRow{
+    border: 2px black solid;
+    padding: 10pt;
+    
+
+}
