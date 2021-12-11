@@ -1,5 +1,5 @@
-let squareCount = 5;
-let squareCountSquared = squareCount * squareCount
+let squareCount
+chooseSquares();
 
 
 
@@ -43,7 +43,7 @@ let resetBtn = document.querySelector("#resetBtn")
       resetBtn.addEventListener('click', cleanSlate);
     resetBtn.addEventListener('click', deSquare);
      resetBtn.addEventListener('click', deSquare);
-    resetBtn.addEventListener('click', reSquare);
+    resetBtn.addEventListener('click', chooseSquares);
     resetBtn.addEventListener('click', createSquares);
     resetBtn.addEventListener('click', paint);
 
@@ -57,6 +57,8 @@ function cleanSlate() {
         }
     }
 
+
+// Removes appended squares so that a new selection can be made//
 function deSquare(){
     let elements = document.querySelectorAll(".squaresRow");
     let elements2 = document.querySelectorAll(".squaresCol");
@@ -73,8 +75,16 @@ function deSquare(){
 
 }
 
-function reSquare(){
-   return squareCount = prompt("How Many Squares for your Etch-a-Sketch")
+function chooseSquares(){
+   squareCount = prompt("How Many Squares for your Etch-a-Sketch. Please chooose between 1 & 100");
+    if (squareCount > 100 || squareCount === 0) {
+        alert("My apologies, that is simply too many or too few squares. Please select again.")
+        chooseSquares();
+    }
+    else {
+        return squareCount
+    }
+
     };
 
 
