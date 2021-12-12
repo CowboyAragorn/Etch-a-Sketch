@@ -1,14 +1,18 @@
 
+//Declarations for range and slider//
+
 let rangeInput = document.querySelector("#myRange").value;
 let range = document.querySelector("#myRange")
+let squareCount = rangeInput
 
 
+//Slider Events//
 range.addEventListener("mouseup", deSquare);
 range.addEventListener('mouseup', createSquares);
 range.addEventListener('mouseup', paint);
 
 
-let squareCount = rangeInput
+
 
 
 function createSquares (){
@@ -34,25 +38,35 @@ function createSquares (){
 }
 
 
-
+//Cycles through each block an
 function paint(){
     let elements = document.getElementsByClassName("squaresRow");
-
     for (let i = 0; i < elements.length; i++) {
-        elements[i].addEventListener("mouseover", function () { 
-            elements[i].style.backgroundColor = "red";
-        
-        });
+        elements[i].addEventListener("mousedown", function () {
+        for (let i = 0; i < elements.length; i++) {
+            elements[i].addEventListener("mouseover", function () { 
+                elements[i].style.backgroundColor = "red";
+                });
+            }
+        for (let i = 0; i < elements.length; i++) {
+            elements[i].addEventListener("mouseup", function () {
+                elements[i].style.backgroundColor = "white";
+                
+            });
+     };
+    });
     }
-`   `
 }
 
-let resetBtn = document.querySelector("#resetBtn")
-    resetBtn.addEventListener('click', cleanSlate);
-    resetBtn.addEventListener('click', deSquare);
-   // resetBtn.addEventListener('click', chooseSquares);
-    resetBtn.addEventListener('click', createSquares);
-    resetBtn.addEventListener('click', paint);
+
+
+/* put right under mouseover red
+elements[i].addEventListener("mousedown", function () {
+    elements[i].style.backgroundColor = "white";
+});
+
+
+*/
 
 
 function cleanSlate() {
@@ -83,6 +97,11 @@ function deSquare(){
 }
 
 
+
+
+let resetBtn = document.querySelector("#resetBtn")
+resetBtn.addEventListener('click', cleanSlate);
+resetBtn.addEventListener('click', paint);
 
 
 
