@@ -1,11 +1,19 @@
-let squareCount
-chooseSquares();
+
+let rangeInput = document.querySelector("#myRange").value;
+let range = document.querySelector("#myRange")
 
 
+range.addEventListener("mouseup", deSquare);
+range.addEventListener('mouseup', createSquares);
+range.addEventListener('mouseup', paint);
+
+
+let squareCount = rangeInput
 
 
 function createSquares (){
     console.log(squareCount);
+    squareCount = range.value;
     for (let i = 1; i <= squareCount; i++){
         let squareColumn = document.createElement("div");
             let attCol = document.createAttribute("class");
@@ -36,14 +44,13 @@ function paint(){
         
         });
     }
-
+`   `
 }
 
 let resetBtn = document.querySelector("#resetBtn")
-      resetBtn.addEventListener('click', cleanSlate);
+    resetBtn.addEventListener('click', cleanSlate);
     resetBtn.addEventListener('click', deSquare);
-     resetBtn.addEventListener('click', deSquare);
-    resetBtn.addEventListener('click', chooseSquares);
+   // resetBtn.addEventListener('click', chooseSquares);
     resetBtn.addEventListener('click', createSquares);
     resetBtn.addEventListener('click', paint);
 
@@ -75,23 +82,19 @@ function deSquare(){
 
 }
 
-function chooseSquares(){
-   squareCount = prompt("How Many Squares for your Etch-a-Sketch. Please chooose between 1 & 100");
-    if (squareCount > 100 || squareCount === 0) {
-        alert("My apologies, that is simply too many or too few squares. Please select again.")
-        chooseSquares();
-    }
-    else {
-        return squareCount
-    }
 
-    };
 
 
 
 
 createSquares();
 paint();
+
+
+
+
+
+
 
 
 
