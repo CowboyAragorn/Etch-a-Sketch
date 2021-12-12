@@ -13,7 +13,7 @@ range.addEventListener('mouseup', paintColor);
 
 
 
-
+//Creates squares by first generating columns and then boxes in rows to fill those columns. Flexbox sorts them into correct rows.//
 function createSquares() {
     console.log(squareCount);
     squareCount = range.value;
@@ -29,13 +29,15 @@ function createSquares() {
     }
     rangeOutput.innerText = squareCount + "x" + squareCount
 
-}
-
+}//button declarations//
 let colorx = 'black';
 let blackBtn = document.querySelector('#blackBtn')
 let colorPicker = document.querySelector('#colorPicker')
 let eraser = document.querySelector('#eraser')
 let rainbow = document.querySelector('#rainbow')
+
+
+//Event listeners for the buttons, routes to painting with their assigned color//
 
 blackBtn.addEventListener('mouseup', function() {
     colorx = 'black';
@@ -56,7 +58,7 @@ eraser.addEventListener('click', paintColor);
 rainbow.addEventListener('click', rainbowColor);
 
 
-
+//Paints by adding an event listener to every box waiting for the mouse to come over to change background//
 function paintColor() {
     let elements = document.getElementsByClassName("squaresRow");
     for (let i = 0; i < elements.length; i++) {
@@ -65,7 +67,7 @@ function paintColor() {
         });
     }
 }
-
+//Rainbow needed its own function with its own variable. Think I could have made some of the declarations a little cleaner earlier to fix this//
 let colory = ' '
 function rainbowColor() {
     let elements = document.getElementsByClassName("squaresRow");
@@ -83,7 +85,7 @@ function rainbowColor() {
 
 
 
-
+//generator for rainbow colors//
 function rainbowColorGenerator() {
     let r = Math.floor(Math.random() * 256)
     let g = Math.floor(Math.random() * 256)
@@ -93,7 +95,7 @@ function rainbowColorGenerator() {
 
 
 
-
+//sets background color to white for every square, resetting without changing currently selected color//
 function cleanSlate() {
 
     let elements = document.getElementsByClassName("squaresRow");
@@ -123,7 +125,7 @@ function deSquare() {
 
 
 
-
+//button to clear slate//
 let resetBtn = document.querySelector("#resetBtn")
 resetBtn.addEventListener('click', cleanSlate);
 
