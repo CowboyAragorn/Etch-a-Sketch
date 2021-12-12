@@ -12,9 +12,9 @@
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    border: 5pt green solid;
-    width: 800px;
-    height: 800px;
+    border: 10pt brown solid;
+    width: 500px;
+    height: 500px;
 
 }
 
@@ -37,7 +37,7 @@ align-content: center;
 }
 
  .squaresRow{
-    border: 2px black solid;
+    border: .1px black solid;
     box-sizing: border-box;
     flex-grow: 1;
     
