@@ -8,7 +8,10 @@ let squareCount = rangeInput
 //Slider Events//
 range.addEventListener("mouseup", deSquare);
 range.addEventListener('mouseup', createSquares);
-range.addEventListener('mouseup', paintColor);
+range.addEventListener('mouseup', function(){
+colorx = 'black';
+paintColor();
+});
 
 
 

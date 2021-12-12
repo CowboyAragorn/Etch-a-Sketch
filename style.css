@@ -1,12 +1,82 @@
+html ,body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: burlywood;
+    font-family: sans-serif;
+}
 
+header{
+    display: flex;
+    background-color: beige;
+    margin: 0;
+}
+
+#title{
+    margin-left: 10%;
+    font-size: 40pt;
+}
 
 #etchContainer{
+    margin-top: 35px;
+    display: flex;
+    justify-content: right;
+    align-content: center;
+    gap: 10%;
+}
+
+.btn{
+    height: 50px;
+    width: 100px;
+    margin: 0 auto;
+}
+#blackBtn{
+    background-color: black;
+    color: white;
+}
+#rainbow{
+    background-image: linear-gradient(red, yellow, blue);
+    font-weight: 1000;
+    color: black;
+}
+
+#eraser{
+    background-color: pink;
+}
+#resetBtn{
+    background-color: lightgrey;
+}
+
+#colorPicker{
+    margin: 0;
+    height: 100%;
+}
+
+.colorPickerContainer{
     display: flex;
     justify-content: center;
     align-content: center;
-    
-
+    gap: 10pt
 }
+
+.slideContainer{
+    border: black 2pt solid;
+    padding: 10pt;
+    background-color: beige;
+}
+
+
+
+#inputSelectors{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 15pt;
+}
+
+
 #squareContainer{
     display: flex;
     flex-direction: column;
@@ -15,6 +85,8 @@
     border: 10pt brown solid;
     width: 500px;
     height: 500px;
+    background-color: white;
+    margin-right: 20%;
 
 }
 
@@ -44,7 +116,3 @@ align-content: center;
 
 }
 
-
-.squareColor{
-    background-color: red;
-}
